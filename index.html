@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CLIL Mission Lab: TOEIC 400→750 Vocabulary</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⚛︎</div>
+      <div>
+        <div class="title">霉鏽集團</div>
+        <div class="subtitle">TOEIC 400→750 | Vocabulary + Context + Task</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <button class="tab-btn active" data-tab="mission">Mission</button>
+      <!-- 已經把 Today’s 10 Words 這個分頁拿掉，因為合併到 Mission 裡 -->
+      <button class="tab-btn" data-tab="practice">Practice</button>
+      <button class="tab-btn" data-tab="team">Team</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Mission + Today’s 10 Words 合併 -->
+    <section id="mission" class="tab active">
+      <div class="card hero">
+        <div class="hero-left">
+          <div class="pill" id="mission-context">Context</div>
+          <h1 id="mission-title">Mission Title</h1>
+          <p class="muted" id="mission-brief">Mission brief...</p>
+
+          <div class="hero-actions">
+
+            <select id="levelSelect" title="Choose difficulty">
+              <option value="1">Level 1 (TOEIC 350–450)</option>
+              <option value="2">Level 2 (TOEIC 450–550)</option>
+              <option value="3">Level 3 (TOEIC 550–650)</option>
+              <option value="4">Level 4 (TOEIC 650–750)</option>
+              <option value="mix" selected>Mix (1–4)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="mini-card">
+            <div class="mini-title">Role</div>
+            <div class="mini-body" id="mission-role">You are ...</div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-title">Goal</div>
+            <div class="mini-body" id="mission-goal">Complete the tasks...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 這裡就是原本的 Today’s 10 Words 表格，搬到 Mission 底下 -->
+      <div class="card">
+        <div class="row space">
+          <div>
+            <h2>Today’s 10 Words</h2>
+            <p class="muted">每個單字都有情境標籤（Content），讓你知道「這個字在什麼情境會用到」。</p>
+          </div>
+          <button class="ghost" id="reshuffleWordsBtn">Reshuffle 10</button>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Word</th>
+                <th>POS</th>
+                <th>Context</th>
+                <th>中文</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody id="vocabBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section id="practice" class="tab">
+      <div class="grid2">
+        <div class="card">
+          <h2>Task 1: Meaning in Context (MCQ)</h2>
+          <p class="muted">不是只問意思，而是先給情境任務（Cognition）。選項不重複、跨題重複率也降低。</p>
+          <div id="mcqArea"></div>
+          <div class="row">
+            <button class="primary" id="checkMcqBtn">Check MCQ</button>
+            <span class="muted" id="mcqScore"></span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Task 2: Fill in the Blank (with Hint)</h2>
+          <p class="muted">每題都有中文+詞性提示，句子挖空用例句，答案更明確。</p>
+          <div id="fillArea"></div>
+          <div class="row">
+            <button class="primary" id="checkFillBtn">Check Fill</button>
+            <span class="muted" id="fillScore"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section id="team" class="tab">
+      <div class="card">
+        <h2>Team</h2>
+        <p class="muted">組員</p>
+
+        <div class="team-grid" id="teamGrid">
+          <div class="member">
+            <img src="images/牛.jpg" alt="Member 1" />
+            <div class="member-name">牛羿翔</div>
+            <div class="member-role">Leader</div>
+          </div>
+          <div class="member">
+            <img src="images/吳.jpg" alt="Member 2" />
+            <div class="member-name">吳杰榮</div>
+            <div class="member-role">Vocabulary</div>
+          </div>
+          <div class="member">
+            <img src="images/洪.jpg" alt="Member 3" />
+            <div class="member-name">洪崇晉</div>
+            <div class="member-role">Practice</div>
+          </div>
+          <div class="member">
+            <img src="images/張.jpg" alt="Member 4" />
+            <div class="member-name">張哲豪</div>
+            <div class="member-role">Content / QA</div>
+          </div>
+          <div class="member">
+            <img src="images/許.jpg" alt="Member 5" />
+            <div class="member-name">許睿宸</div>
+            <div class="member-role">Teaching Plan</div>
+          </div>
+          <div class="member">
+            <img src="images/陳.jpg" alt="Member 6" />
+            <div class="member-name">陳新翰</div>
+            <div class="member-role">Webiste</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="muted">許睿宸好帥</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
